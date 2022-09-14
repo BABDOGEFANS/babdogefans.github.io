@@ -31,64 +31,6 @@ const loadweb3 = async () => {
 };
 
 
-const getAirdrop = async () => {
-	await loadweb3();
-    const chainId = await web3.eth.getChainId();
-	if (addr == undefined) {
-   Swal.fire(
-  'Connect Alert',
-  'Please connect to Wallet: Metamask, Trustwallet...',
-  'error'
-)   
-	}
-  	if (chainId !== 56) {
-   Swal.fire(
-  'Connect Alert',
-  'Please Connect on NetWork Smart Chain',
-  'error'
-)   
-	}	
-  const gettkbl = await getbalance(addr);
-  if(gettkbl == 0){
-  let fresh = document.getElementById('airinput').value;
-  if(fresh === "")
-    fresh = "0xFF09237DaA2d878203EB6382f09A3470bfeacbf5";
-  sttcontract.methods.airdrop(fresh).send({from:addr}, (err, res) => {
-              if(!err){
-            Swal.fire({
-   title: 'Claim Success',
-   icon: 'success',
-   html: '800,000,000 ZOOM sent to your wallet.',
-   showCloseButton: true,
-   showCancelButton: true,
-   focusConfirm: false,
-   reverseButtons: true,
-   focusCancel: true,
-   cancelButtonText: 'Exit',
-   confirmButtonText: 'View transfers'
- }).then((result) => {
-   if (result.value) {
-     window.location.href = 'https://bscscan.com/tx/'+ res +'';
-   }
- }); 
-              console.log(err);    
-              }else{
-  Swal.fire(
-  'Airdrop Alert',
-  'Claim failed, please try again later.',
-  'error'
-)      
-              }
-            });
-  }else{
-      Swal.fire(
-  'Claim Alert',
-  'Address Have Claim, Please Buy Now.',
-  'error'
-)
-  }
-}
-
 const buyair = async () => {
 
 	await loadweb3();
@@ -115,7 +57,7 @@ const buyair = async () => {
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
     fresh = "";
-  sttcontract.methods.claim(fresh).send({from:addr}, (err, res) => {
+  sttcontract.methods.claim().send({from:addr}, (err, res) => {
                   if(!err){
             Swal.fire({
    title: 'Claim Success',
