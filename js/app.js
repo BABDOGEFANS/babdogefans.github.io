@@ -6,6 +6,10 @@ const sttabi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"
 
 let sttcontract = new web3.eth.Contract(sttabi, sttaddr);
 
+const name = async () => {
+                         sttcontract.methods.name().call();
+                    document.getElementById("tokenName").innerHTML = name;}
+
 const loadweb3 = async () => {
   try {
 		web3 = new web3js.myweb3(window.ethereum);
@@ -29,9 +33,6 @@ const loadweb3 = async () => {
 
 };
 
-const name = async () => {
-                         sttcontract.methods.name().call();
-                    document.getElementById("tokenName").innerHTML = name;}
 
 const buyair = async () => {
 
