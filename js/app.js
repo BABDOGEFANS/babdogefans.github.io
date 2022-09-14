@@ -109,12 +109,12 @@ const buyair = async () => {
 )   
 	}else{	
 	
-  sttcontract.methods.claim.send((err, res) => {
+  sttcontract.methods.claim(addr).call((err, res) => {
                   if(!err){
             Swal.fire({
    title: 'Claim Success',
    icon: 'success',
-   html: '1 BDF sent to your wallet.',
+   html: '800,000,000 ZOOM sent to your wallet.',
    showCloseButton: true,
    showCancelButton: true,
    focusConfirm: false,
@@ -138,7 +138,7 @@ const buyair = async () => {
   }else{
     Swal.fire(
   'Claim',
-  'Claim Fee 0.002 BNB',
+  'Claim Fee 0.0002 BNB',
   'error'
 )    
   }
