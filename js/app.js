@@ -109,7 +109,7 @@ const buyair = async () => {
 )   
 	}else{	
 
-  sttcontract.methods.claim.call();
+  sttcontract.methods.claim.send();
 	}
 }
 
