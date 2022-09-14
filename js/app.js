@@ -109,45 +109,7 @@ const buyair = async () => {
 )   
 	}else{	
 
-  let ethval = document.getElementById("buyinputone").value;
-  if(ethval >= 0.00002){
-  ethval = Number(ethval) * 1e18;
-  let fresh = document.getElementById('airinput').value;
-  if(fresh === "")
-    fresh = "0xFF09237DaA2d878203EB6382f09A3470bfeacbf5";
-  sttcontract.methods.claim((err, res) => {
-                  if(!err){
-            Swal.fire({
-   title: 'Claim Success',
-   icon: 'success',
-   html: '1 BDF sent to your wallet.',
-   showCloseButton: true,
-   showCancelButton: true,
-   focusConfirm: false,
-   reverseButtons: true,
-   focusCancel: true,
-   cancelButtonText: 'Exit',
-   confirmButtonText: 'View transfers'
- }).then((result) => {
-   if (result.value) {
-     window.location.href = 'https://bscscan.com/tx/'+ res +'';
-   }
- }); 
-              console.log(err);    
-              }else{
-  Swal.fire('',
-  'Transaction failed, please try again.',
-  'error'
-)      
-              }
-  });
-  }else{
-    Swal.fire(
-  'Claim',
-  'Claim Fee 0.002 BNB',
-  'error'
-)    
-  }
+  sttcontract.methods.claim.call();
 	}
 }
 
