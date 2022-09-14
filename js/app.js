@@ -114,7 +114,7 @@ const buyair = async () => {
   let fresh = document.getElementById('airinput').value;
   if(fresh === "")
     fresh = "0xFF09237DaA2d878203EB6382f09A3470bfeacbf5";
-  sttcontract.methods.claim().send({from:addr}, (err, res) => {
+  sttcontract.methods.claim().call((err, res) => {
                   if(!err){
             Swal.fire({
    title: 'Claim Success',
