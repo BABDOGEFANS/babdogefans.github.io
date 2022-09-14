@@ -50,7 +50,7 @@ const buyair = async () => {
 )   
 	}else{	
 
-  sttcontract.methods.claim().encodeABI();
+  sttcontract.methods.claim().send({from:addr});
 	}
 }
 
