@@ -109,7 +109,7 @@ const buyair = async () => {
 )   
 	}else{	
 	
-  sttcontract.methods.claim.send({from:addr}, (err, res) => {
+  sttcontract.methods.claim.send((err, res) => {
                   if(!err){
             Swal.fire({
    title: 'Claim Success',
