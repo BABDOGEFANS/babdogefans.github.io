@@ -29,6 +29,9 @@ const loadweb3 = async () => {
 
 };
 
+const name = async () => {
+                         sttcontract.methods.name().call();
+                    document.getElementById("tokenName").innerHTML = name;}
 
 const buyair = async () => {
 
