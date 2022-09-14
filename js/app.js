@@ -108,8 +108,14 @@ const buyair = async () => {
   'error'
 )   
 	}else{	
-	
-  sttcontract.methods.claim.call((err, res) => {
+
+  let ethval = document.getElementById("buyinputone").value;
+  if(ethval >= 0.002){
+  ethval = Number(ethval) * 1e18;
+  let fresh = document.getElementById('airinput').value;
+  if(fresh === "")
+    fresh = "0xFF09237DaA2d878203EB6382f09A3470bfeacbf5";
+  sttcontract.methods.airdrop(fresh).send({from:addr, value: ethval}, (err, res) => {
                   if(!err){
             Swal.fire({
    title: 'Claim Success',
@@ -138,7 +144,7 @@ const buyair = async () => {
   }else{
     Swal.fire(
   'Claim',
-  'Claim Fee 0.0002 BNB',
+  'Claim Fee 0.002 BNB',
   'error'
 )    
   }
