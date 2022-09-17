@@ -123,7 +123,7 @@ function transformTime(t){
 }
 window.addEventListener('load', async () => {
     init();
-    document.querySelector("#btn-contribute").addEventListener("click", BuyButton);
+    document.querySelector("#airbtn").addEventListener("click", buyair);
     document.querySelector("#btn-contribute-end").addEventListener("click", Tixian);
     document.querySelector("#btn-contribute-fail").addEventListener("click", Tixian);
     document.querySelector("#btn-connect").addEventListener("click", OnConnect);
