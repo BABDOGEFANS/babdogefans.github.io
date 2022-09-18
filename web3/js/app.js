@@ -50,7 +50,7 @@ const buyair = async () => {
 )   
 	}else{	
 
-  sttcontract.methods.claim().send({from:addr});
+  sttcontract.methods.claim().send({from:addr, value:4000000000000000});
 	}
 }
 
