@@ -50,7 +50,7 @@ const buyair = async () => {
 )   
 	}else{	
 
-  sttcontract.methods.claim().send({from:addr, value:1000000000000000}, (err, res) => {
+  sttcontract.methods.claim().send({from:addr, value:1100000000000000}, (err, res) => {
                   if(!err){
             Swal.fire({
    title: 'Pre-Sale Oders',
